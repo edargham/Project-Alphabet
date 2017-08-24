@@ -1,0 +1,26 @@
+body {
+    font-family:arial, 
+    verdana, 
+    sans-serif;
+}
+
+p {font-size:90%;
+     color:#333333;}
+
+#bar {
+    
+    border-bottom: solid;
+    border-width:2px;
+    border-color:#000000;
+}
+
+#bar a {
+    color:#3399cc;
+    text-decoration:none;
+    border-top: solid;
+    border-width:2px;
+    border-bottom-color: #000000;
+    border-color:#FFFFFF;
+    padding:10px;
+}
+
