@@ -1,10 +1,8 @@
 # Project Alphabet
-===================================
+
 Read Me Before Using:
-===================================
 
 I- Requirements:
-————————————————
 
 You are expected to have all of the software listed below before you can run the project:
 
@@ -83,7 +81,6 @@ All OS:
 
 
 II- Content:
-————————————
 
 This Repository Contains the Full Stack (Back End and Front End) for Project Alphabet:
 Folder Web Contains The Front end.
