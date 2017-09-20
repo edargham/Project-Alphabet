@@ -1,21 +1,35 @@
 {
-  "name": "donation-tutorial",
+  "name": "project-alphabet",
   "version": "0.0.1",
-  "description": "Donation tutorial",
+  "description": "Project Alphabet",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "react",
-    "tutorial",
-    "donation",
-    "example"
+    "project-alphabet"
   ],
-  "author": "zenva",
-  "license": "ISC",
+  "author": "edargham",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mysql": "",
+    "react-dom": "15.6.1",
+    "react": "15.6.1",
+    "react-sortable-tree": "^1.2.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "webpack": "^3.6.0"
   }
 }
