@@ -21,16 +21,19 @@ class FormBox extends Component{
             success: function(data){
                 console.log('success!');
                 this.setState({data: data});
+                alert("Successful Addition!");
+                window.location.reload();
             }.bind(this),
             error: function(xhr, status, err){
                 console.error(this.props.url, status, err.toString());
             }.bind(this)
         });
+
     }
 
     render(){
         return(<div>
-            <SkillForm onSkillSubmit= {this.handleSkillSubmit.bind(this)} />
+            <SkillForm handleClose = {this.props.handleClose} onSkillSubmit= {this.handleSkillSubmit.bind(this)} />
             </div>
         );
     }

@@ -58,11 +58,11 @@ app.post('/api/skills', function(req, res){
     function(err){
       if(err)
         console.log('Error while performing Query: ' + err);
-      else
+      else{
         console.log('New Skill Added Successfuly');
+      }
     }
   );
-
 
 });
 

@@ -17,7 +17,8 @@ class ModalForm extends Component{
         };
       }
     
-      handleClose() {
+      handleClose(event) {
+        console.log("hiding");
         this.setState({ show: false });
       }
     
@@ -36,7 +37,7 @@ class ModalForm extends Component{
                     <Modal.Title>Add A Skill</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <FormBox url = "api/skills"/>
+                    <FormBox url = "api/skills" handleClose = {this.handleClose}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={this.handleClose}>Close</Button>
