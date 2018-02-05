@@ -15,10 +15,10 @@
   "author": "edargham",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.13.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "jquery": "^3.2.1",
-    "mysql": "",
+    "mysql": "^2.15.0",
     "react": "15.6.1",
     "react-bootstrap": "^0.32.1",
     "react-dom": "15.6.1",
