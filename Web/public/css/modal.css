@@ -1,0 +1,13 @@
+.mod{
+    position: absolute;
+    height: 100% !important;
+    width: 100% !important;
+    background-color: #000 !important;
+    opacity: 0.5 !important;
+    z-index: 11000;
+}
+
+.mod-body{
+    z-index: 11100!important;
+    background-color: #fff !important;
+}

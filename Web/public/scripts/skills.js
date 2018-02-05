@@ -1,6 +1,3 @@
-//import React, { Component } from 'react';
-//import SortableTree from 'react-sortable-tree';
-
 var SkillBox = React.createClass({
 
     getInitialState: function() {

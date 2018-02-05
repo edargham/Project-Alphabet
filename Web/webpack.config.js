@@ -1,10 +1,11 @@
 var react = require('react');
 var webpack = require('webpack');
-var ignore = new webpack.IgnorePlugin()
+var ignore = new webpack.IgnorePlugin();
+var babelPluginTransformObjectRestSpread = require('babel-plugin-transform-object-rest-spread');
 module.exports = {
-    entry: './public/treeview-app.js',
+    entry: './public/scripts/treeview-app.js',
     output: {
-        path:'/Users/eliasdargham/web-workspace/project-alphabet/public',
+        path:'/Users/eliasdargham/web-workspace/project-alphabet/public/scripts',
         filename: 'treeview.js'
     },
     plugins: [
@@ -20,7 +21,8 @@ module.exports = {
                 loader: "babel-loader", 
                 query:
                   {
-                    presets:['react']
+                    presets: ['react'],
+                    plugins: [babelPluginTransformObjectRestSpread]
                   }
               }
             ]
