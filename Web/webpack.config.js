@@ -5,7 +5,7 @@ var babelPluginTransformObjectRestSpread = require('babel-plugin-transform-objec
 module.exports = {
     entry: './public/scripts/treeview-app.js',
     output: {
-        path:'/Users/eliasdargham/web-workspace/project-alphabet/public/scripts',
+        path:'/Users/eliasdargham/GitHub/Project-Alphabet/Web/public/scripts',
         filename: 'treeview.js'
     },
     plugins: [
@@ -18,7 +18,7 @@ module.exports = {
             exclude: /node_modules/,
             use: [
               {
-                loader: "babel-loader", 
+                loader: "babel-loader",
                 query:
                   {
                     presets: ['react'],

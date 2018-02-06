@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SortableTree, { addNodeUnderParent, removeNodeAtPath,  
+import SortableTree, { addNodeUnderParent, removeNodeAtPath,
 getFlatDataFromTree,getTreeFromFlatData, } from 'react-sortable-tree';
 import ModalForm from './formshow/modal/modal';
 import $ from 'jquery';
@@ -34,9 +34,9 @@ export default class Tree extends Component {
     this.state = {
       treeData: getTreeFromFlatData({
         flatData: initialData.map(node => ({ ...node, title: node.Skill_Name })),
-        getKey: node => node.idSkill, 
-        getParentKey: node => node.Parent_Skill_ID, 
-        rootKey: 0, 
+        getKey: node => node.idSkill,
+        getParentKey: node => node.Parent_Skill_ID,
+        rootKey: 0,
       }),
     };
   }
@@ -63,7 +63,7 @@ export default class Tree extends Component {
             onChange={treeData => this.setState({ treeData })}
             generateNodeProps = {({node, path}) => ({
               buttons: [
-                <button bsStyle="primary" bsSize="small" onClick = {this.modal.handleShow}>
+              <button onClick = {this.modal.handleShow}>
                   Add Skill
                 </button>
               ]
@@ -83,5 +83,5 @@ export default class Tree extends Component {
       </div>
     );
   }
-  
+
 }

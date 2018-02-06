@@ -11,7 +11,7 @@ class SkillForm extends Component{
         this.state = {
             Skill_Name: "",
             Skill_Description: null,
-            idParent_Skill: null,
+            idParent_Skill: 0,
             rating: 0
         }
     }
@@ -53,14 +53,14 @@ class SkillForm extends Component{
 
     render(){
         return(
-            <form id = "Postform" name = "Postform" method = "post" onSubmit = {this.handleSubmit.bind(this)} ref = "subForm">
-              <Textbox value = {this.state.Skill_Name} ref = "name" updateText = {this.updateTxt.bind(this)}>Skill Name: </Textbox>
-              <br />
-              <Textarea value = {this.state.Skill_Description} ref = "description" updateTextarea = {this.updateDesc.bind(this)}>Skill Description: </Textarea>
-              <RatingDrop value = {this.state.rating} ref = "rate" updateOpt = {this.updateRate.bind(this)}>Rating: </RatingDrop>
-              <Numbox value = {this.props.idParent_Skill} ref = "nbrbox" updateNbr = {this.updateNumber.bind(this)}>Parent Skill ID: </Numbox>
-              <input type="submit" value="Submit"/>
-            </form>
+          <form id = "Postform" name = "Postform" method = "post" onSubmit = {this.handleSubmit.bind(this)} ref = "subForm">
+            <Textbox value = {this.state.Skill_Name} ref = "name" updateText = {this.updateTxt.bind(this)}>Skill Name: </Textbox>
+            <br />
+            <Textarea value = {this.state.Skill_Description} ref = "description" updateTextarea = {this.updateDesc.bind(this)}>Skill Description: </Textarea>
+            <RatingDrop value = {this.state.rating} ref = "rate" updateOpt = {this.updateRate.bind(this)}>Rating: </RatingDrop>
+            <Numbox value = {this.props.idParent_Skill} ref = "nbrbox" updateNbr = {this.updateNumber.bind(this)}>Parent Skill ID: </Numbox>
+            <input type="submit" value="Submit"/>
+          </form>
         );
     }
 

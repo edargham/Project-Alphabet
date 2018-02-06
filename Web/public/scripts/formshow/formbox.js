@@ -10,23 +10,22 @@ class FormBox extends Component{
         }
     }
 
-    componentDidMount(){}
-
     handleSkillSubmit(skill){
         $.ajax({
-            async: false,
             url: this.props.url,
             dataType: 'json',
             type: 'POST',
             data: skill,
             success: function(){
                 console.log('success!');
-                //this.setState({data: data});
+                this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err){
                 console.error(this.props.url, status, err.toString());
             }.bind(this)
         });
+        alert("Successful Addition!");
+        location.reload(true);
     }
 
     render(){
