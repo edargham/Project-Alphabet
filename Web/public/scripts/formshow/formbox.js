@@ -14,21 +14,19 @@ class FormBox extends Component{
 
     handleSkillSubmit(skill){
         $.ajax({
+            async: false,
             url: this.props.url,
             dataType: 'json',
             type: 'POST',
             data: skill,
-            success: function(data){
+            success: function(){
                 console.log('success!');
-                this.setState({data: data});
-                alert("Successful Addition!");
-                window.location.reload();
+                //this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err){
                 console.error(this.props.url, status, err.toString());
             }.bind(this)
         });
-
     }
 
     render(){
@@ -38,6 +36,6 @@ class FormBox extends Component{
         );
     }
 
-} 
+}
 
 export default FormBox;
