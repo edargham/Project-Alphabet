@@ -15206,9 +15206,13 @@ var Tree = function (_Component) {
               var node = _ref4.node,
                   path = _ref4.path;
               return {
-                buttons: [_react2.default.createElement(
+                buttons: [
+                //Add prop to set for parent_skill_id to the form.
+                _react2.default.createElement(
                   'button',
-                  { onClick: _this2.modal.handleShow },
+                  { onClick: function (event) {
+                      this.modal.setState({ parent: node.idSkill });this.modal.handleShow(event);
+                    }.bind(_this2) },
                   'Add Skill'
                 )]
               };
@@ -20564,12 +20568,18 @@ var ModalForm = function (_Component) {
     _this.handleClose = _this.handleClose.bind(_this);
 
     _this.state = {
-      show: false
+      show: false,
+      parent: 0
     };
     return _this;
   }
 
   _createClass(ModalForm, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.formbox.setState({ parent: this.state.parent });
+    }
+  }, {
     key: 'handleClose',
     value: function handleClose(event) {
       console.log("hiding");
@@ -20584,6 +20594,7 @@ var ModalForm = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
 
       return _react2.default.createElement(
         'div',
@@ -20603,7 +20614,9 @@ var ModalForm = function (_Component) {
           _react2.default.createElement(
             _Modal2.default.Body,
             null,
-            _react2.default.createElement(_formbox2.default, { url: 'api/skills', handleClose: this.handleClose })
+            _react2.default.createElement(_formbox2.default, { url: 'api/skills', handleClose: this.handleClose, ref: function ref(_ref) {
+                _this2.formbox = _ref;
+              } })
           ),
           _react2.default.createElement(
             _Modal2.default.Footer,
@@ -65084,12 +65097,24 @@ var FormBox = function (_Component) {
         var _this = _possibleConstructorReturn(this, (FormBox.__proto__ || Object.getPrototypeOf(FormBox)).call(this, props));
 
         _this.state = {
-            data: {}
+            data: {},
+            parent: 0
         };
         return _this;
     }
 
     _createClass(FormBox, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({ parent: this.props.parent });
+            alert("FormBox: " + this.state.parent);
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            this.form.setState({ idParent_Skill: this.state.parent });
+        }
+    }, {
         key: 'handleSkillSubmit',
         value: function handleSkillSubmit(skill) {
             _jquery2.default.ajax({
@@ -65111,10 +65136,14 @@ var FormBox = function (_Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_form2.default, { handleClose: this.props.handleClose, onSkillSubmit: this.handleSkillSubmit.bind(this) })
+                _react2.default.createElement(_form2.default, { parent: this.state.parent, handleClose: this.props.handleClose, onSkillSubmit: this.handleSkillSubmit.bind(this), ref: function ref(_ref) {
+                        _this2.form = _ref;
+                    } })
             );
         }
     }]);
@@ -65197,6 +65226,12 @@ var SkillForm = function (_Component) {
     }
 
     _createClass(SkillForm, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({ idParent_Skill: this.props.parent });
+            alert("Form: " + this.state.idParent_Skill);
+        }
+    }, {
         key: 'updateTxt',
         value: function updateTxt(newText) {
             var Temp = newText;
@@ -65226,7 +65261,7 @@ var SkillForm = function (_Component) {
             event.preventDefault();
             var Skill_Name = this.state.Skill_Name.trim();
             var Skill_Description = this.state.Skill_Description /*.trim()*/;
-            var idParent_Skill = this.state.idParent_Skill.trim();
+            var idParent_Skill = this.state.idParent_Skill /*.trim()*/;
             var rating = this.state.rating.trim();
             if (!Skill_Name) {
                 alert('Empty');
@@ -65258,14 +65293,12 @@ var SkillForm = function (_Component) {
                     { value: this.state.rating, ref: 'rate', updateOpt: this.updateRate.bind(this) },
                     'Rating: '
                 ),
-                _react2.default.createElement(
-                    _numbox2.default,
-                    { value: this.props.idParent_Skill, ref: 'nbrbox', updateNbr: this.updateNumber.bind(this) },
-                    'Parent Skill ID: '
-                ),
                 _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
             );
         }
+
+        //<Numbox value = {this.props.idParent_Skill} ref = "nbrbox" updateNbr = {this.updateNumber.bind(this)}>Parent Skill ID: </Numbox>
+
     }]);
 
     return SkillForm;

@@ -3,6 +3,7 @@ import SortableTree, { addNodeUnderParent, removeNodeAtPath,
 getFlatDataFromTree,getTreeFromFlatData, } from 'react-sortable-tree';
 import ModalForm from './formshow/modal/modal';
 import $ from 'jquery';
+
 function loadSkillsFromServer() {
   console.log("Loading...");
   let dbData = [];
@@ -63,7 +64,8 @@ export default class Tree extends Component {
             onChange={treeData => this.setState({ treeData })}
             generateNodeProps = {({node, path}) => ({
               buttons: [
-              <button onClick = {this.modal.handleShow}>
+              //Add prop to set for parent_skill_id to the form.
+              <button onClick = {function(event){this.modal.setState({parent: node.idSkill}); this.modal.handleShow(event);}.bind(this)}>
                   Add Skill
                 </button>
               ]

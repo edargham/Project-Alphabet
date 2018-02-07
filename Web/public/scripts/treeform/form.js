@@ -16,6 +16,12 @@ class SkillForm extends Component{
         }
     }
 
+    componentDidMount(){
+      this.setState({idParent_Skill: this.props.parent});
+      alert("Form: " + this.state.idParent_Skill);
+    }
+
+
     updateTxt(newText){
         var Temp = newText;
         this.setState({Skill_Name: Temp});
@@ -40,7 +46,7 @@ class SkillForm extends Component{
         event.preventDefault();
         var Skill_Name = this.state.Skill_Name.trim();
         var Skill_Description =  this.state.Skill_Description/*.trim()*/;
-        var idParent_Skill = this.state.idParent_Skill.trim();
+        var idParent_Skill = this.state.idParent_Skill/*.trim()*/;
         var rating = this.state.rating.trim();
         if(!Skill_Name){
             alert('Empty');
@@ -58,14 +64,14 @@ class SkillForm extends Component{
             <br />
             <Textarea value = {this.state.Skill_Description} ref = "description" updateTextarea = {this.updateDesc.bind(this)}>Skill Description: </Textarea>
             <RatingDrop value = {this.state.rating} ref = "rate" updateOpt = {this.updateRate.bind(this)}>Rating: </RatingDrop>
-            <Numbox value = {this.props.idParent_Skill} ref = "nbrbox" updateNbr = {this.updateNumber.bind(this)}>Parent Skill ID: </Numbox>
+
             <input type="submit" value="Submit"/>
           </form>
         );
     }
 
 
-
+//<Numbox value = {this.props.idParent_Skill} ref = "nbrbox" updateNbr = {this.updateNumber.bind(this)}>Parent Skill ID: </Numbox>
 }
 
 export default SkillForm;

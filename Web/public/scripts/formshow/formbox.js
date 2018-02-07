@@ -6,8 +6,17 @@ class FormBox extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            parent: 0,
         }
+    }
+    componentDidMount(){
+      this.setState({parent: this.props.parent});
+      alert("FormBox: " + this.state.parent);
+    }
+
+    componentDidUpdate(){
+      this.form.setState({idParent_Skill: this.state.parent});
     }
 
     handleSkillSubmit(skill){
@@ -30,7 +39,7 @@ class FormBox extends Component{
 
     render(){
         return(<div>
-            <SkillForm handleClose = {this.props.handleClose} onSkillSubmit= {this.handleSkillSubmit.bind(this)} />
+          <SkillForm parent = {this.state.parent} handleClose = {this.props.handleClose} onSkillSubmit= {this.handleSkillSubmit.bind(this)} ref = {(ref) => {this.form = ref;}}/>
             </div>
         );
     }
