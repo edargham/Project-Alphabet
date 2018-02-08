@@ -6,11 +6,18 @@ class FormBox extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data: {}
+            data: {},
+            parent: 0,
         }
     }
+    componentDidMount(){
+      this.setState({parent: this.props.parent});
+      alert("FormBox: " + this.state.parent);
+    }
 
-    componentDidMount(){}
+    componentDidUpdate(){
+      this.form.setState({idParent_Skill: this.state.parent});
+    }
 
     handleSkillSubmit(skill){
         $.ajax({
@@ -18,7 +25,7 @@ class FormBox extends Component{
             dataType: 'json',
             type: 'POST',
             data: skill,
-            success: function(data){
+            success: function(){
                 console.log('success!');
                 this.setState({data: data});
             }.bind(this),
@@ -26,15 +33,17 @@ class FormBox extends Component{
                 console.error(this.props.url, status, err.toString());
             }.bind(this)
         });
+        alert("Successful Addition!");
+        location.reload(true);
     }
 
     render(){
         return(<div>
-            <SkillForm onSkillSubmit= {this.handleSkillSubmit.bind(this)} />
+          <SkillForm parent = {this.state.parent} handleClose = {this.props.handleClose} onSkillSubmit= {this.handleSkillSubmit.bind(this)} ref = {(ref) => {this.form = ref;}}/>
             </div>
         );
     }
 
-} 
+}
 
 export default FormBox;

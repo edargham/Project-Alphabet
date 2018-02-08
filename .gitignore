@@ -1,3 +1,5 @@
 
 Web/node_modules/*
 
+.vscode/database.json
+*.log
