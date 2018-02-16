@@ -5,15 +5,15 @@ import "react-multi-toggle/style.css";
 
 const groupOptions = [
   {
-    displayName: 'In queue',
+    displayName: 'Warming Up!',
     value: 2
   },
   {
-    displayName: 'In progress',
+    displayName: 'Took Course',
     value: 4
   },
   {
-    displayName: 'Evaluated',
+    displayName: 'Start Evaluation',
     value: 8
   },
   {

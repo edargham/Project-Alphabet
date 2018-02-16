@@ -43,6 +43,10 @@ p {font-size:90%;
   background: #3399cc!important;
 }
 
+.j-day{
+  font-weight: bold !important;
+}
+
 .optionDisabled {
   background: #e6e6e6;
   cursor: no-drop !important;
