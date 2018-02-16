@@ -42,3 +42,8 @@ p {font-size:90%;
 .toggleContainer .toggle {
   background: #3399cc!important;
 }
+
+.optionDisabled {
+  background: #e6e6e6;
+  cursor: no-drop !important;
+}
