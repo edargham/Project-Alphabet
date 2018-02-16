@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import MultiToggle from 'react-multi-toggle';
 
+import "react-multi-toggle/style.css";
+
 const groupOptions = [
   {
     displayName: 'In queue',
@@ -26,7 +28,7 @@ class Toggle extends Component {
     super(props);
 
     this.state = {
-      groupSize: 4
+      groupSize: 2
     };
   }
 

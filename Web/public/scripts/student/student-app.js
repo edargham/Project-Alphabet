@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Tree from './student';
-//import Toggle from '../multi-toggle/toggle';
 
 
 const rootEl = document.getElementById('app');
