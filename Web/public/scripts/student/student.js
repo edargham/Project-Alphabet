@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import SortableTree, { addNodeUnderParent, removeNodeAtPath,
 getFlatDataFromTree,getTreeFromFlatData, } from 'react-sortable-tree';
-import FileExplorerTheme from 'react-sortable-tree-theme-full-node-drag';
-import ModalForm from './formshow/modal/modal';
 import $ from 'jquery';
 
 function loadSkillsFromServer() {
@@ -61,17 +59,9 @@ export default class Tree extends Component {
         ↓treeData for this tree was generated from flat data similar to DB rows↓
         <div style={{ height: 1000 }}>
           <SortableTree
-            theme={FileExplorerTheme}
             treeData={this.state.treeData}
             onChange={treeData => this.setState({ treeData })}
-            generateNodeProps = {({node, path}) => ({
-              buttons: [
-              //Add prop to set for parent_skill_id to the form.
-              <button onClick = {function(event){this.modal.setState({parent: node.idSkill}); this.modal.handleShow(event);}.bind(this)}>
-                  Add Skill
-                </button>
-              ]
-            })}
+            canDrag = {false}
           />
         </div>
         <hr />
@@ -83,7 +73,6 @@ export default class Tree extends Component {
             </li>
           ))}
         </ul>
-        <ModalForm ref = {(ref) => { this.modal = ref; }} />
       </div>
     );
   }
