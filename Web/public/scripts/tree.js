@@ -68,8 +68,8 @@ export default class Tree extends Component {
               buttons: [
               //Add prop to set for parent_skill_id to the form.
               <button onClick = {function(event){this.modal.setState({parent: node.idSkill}); this.modal.handleShow(event);}.bind(this)}>
-                  Add Skill
-                </button>
+                Add Skill
+              </button>
               ]
             })}
           />

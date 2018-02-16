@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SortableTree, { addNodeUnderParent, removeNodeAtPath,
 getFlatDataFromTree,getTreeFromFlatData, } from 'react-sortable-tree';
 import $ from 'jquery';
+import Toggle from '../multi-toggle/toggle';
 
 function loadSkillsFromServer() {
   console.log("Loading...");
@@ -62,6 +63,12 @@ export default class Tree extends Component {
             treeData={this.state.treeData}
             onChange={treeData => this.setState({ treeData })}
             canDrag = {false}
+            generateNodeProps = {({node, path}) => ({
+              buttons: [
+              //Add prop to set for parent_skill_id to the form.
+              <Toggle />
+              ]
+            })}
           />
         </div>
         <hr />
