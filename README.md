@@ -28,24 +28,24 @@ Open Terminal and type:
 
 	sudo dnf install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
-- Homebrew:
-	Open Terminal and type:
+**Alternatively:** Homebrew:  
+Open Terminal and type:  
 
 		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)" 
 
-	Follow the instructions in the terminal to complete the installation process.
-	Once Linuxbrew is installed, you’ll need add the following 3 lines to your `.bashrc` or `.zshrc file`:
+Follow the instructions in the terminal to complete the installation process.  
+Once Linuxbrew is installed, you’ll need add the following 3 lines to your `.bashrc` or `.zshrc file`:  
 
 		export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 		export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"	export PATH="$HOME/.linuxbrew/bin:$PATH"
 	
-	Why Homebrew/Linuxbrew?
-	You may be asking why you should use a third-party package manager. Here are some advantages:
+Why Homebrew/Linuxbrew?  
+You may be asking why you should use a third-party package manager. Here are some advantages:  
 
-	Can install software to a home directory and so does not require sudo.
-	Install software not packaged by the native distribution.
-	Install up-to-date versions of software when the native distribution is old.
-	Use the same package manager to manage both your Mac and Linux machines.
+Can install software to a home directory and so does not require sudo.  
+Install software not packaged by the native distribution.  
+Install up-to-date versions of software when the native distribution is old.  
+Use the same package manager to manage both your Mac and Linux machines.  
 
 All OS:
 -------
