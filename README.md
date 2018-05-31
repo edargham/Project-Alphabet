@@ -48,34 +48,33 @@ Linux only:
 	Use the same package manager to manage both your Mac and Linux machines.
 
 All OS:
-=========
-1 - node.js
-     Download node here:
-     https://nodejs.org/en/download/   
-   Alternatively for macOS and Linux, you can type in terminal if you already have home-brew installed/Followed steps for macOS 
-   and Linux before coming here
+-------
+1 - node.js:
+	Download node here:
+	https://nodejs.org/en/download/   
+	Alternatively for macOS and Linux, you can type in terminal if you already have home-brew installed/Followed steps for macOS 
+	and Linux before coming here
+	`brew install node`
 
-	    brew install node
-
-2 - node package manager (npm)
+2 - node package manager (npm):
 	Windows: Make sure to select it while installing node.js from the link above
 	Mac and Linux (Follow Steps listed below before installing):
 	Open Terminal and Type:
+	`brew install npm`
+	Newer versions of node install npm automatically.
 	
-	brew install npm
-
 3 - mySQL workbench
-     Download workbench here:
-     https://dev.mysql.com/downloads/workbench/
+	Download workbench here:
+	https://dev.mysql.com/downloads/workbench/
 
 4- mySQL server (localhost or webhosted):
-        You have to download mySQL Community Server:
+	You have to download mySQL Community Server:
 	https://dev.mysql.com/downloads/mysql/
 	Or and Apache Localhosting Server:
-        https://www.apachefriends.org/download.html
+	https://www.apachefriends.org/download.html
 
 II- Content:
-------------
+============
 This Repository Contains the Full Stack (Back End and Front End) for Project Alphabet:
 Folder Web Contains The Front end.
 Folder DB Contains The SQL Scripts for the Data Model.
