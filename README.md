@@ -3,11 +3,11 @@
 Read Me Before Using:
 
 I- Requirements:
--------------------
+=================
 You are expected to have all of the software listed below before you can run the project:
 
 macOS only:
----------------
+-------------
 1- XCode (Found in the App Store)
 2- Homebrew
 	Open Terminal and type:
@@ -27,10 +27,9 @@ Linux only:
 	For Fedora:
 	Open Terminal and type:
 
-	sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
+	sudo dnf install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
 - Homebrew:
----------------
 	Open Terminal and type:
 
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)" 
@@ -49,12 +48,10 @@ Linux only:
 	Use the same package manager to manage both your Mac and Linux machines.
 
 All OS:
---------
+=========
 1 - node.js
      Download node here:
-
-	    https://nodejs.org/en/download/
-        
+     https://nodejs.org/en/download/   
    Alternatively for macOS and Linux, you can type in terminal if you already have home-brew installed/Followed steps for macOS 
    and Linux before coming here
 
@@ -69,18 +66,13 @@ All OS:
 
 3 - mySQL workbench
      Download workbench here:
-	
-	https://dev.mysql.com/downloads/workbench/
+     https://dev.mysql.com/downloads/workbench/
 
 4- mySQL server (localhost or webhosted):
         You have to download mySQL Community Server:
-	
-	`https://dev.mysql.com/downloads/mysql/`
-
-       Or and Apache Localhosting Server:
-
-	`https://www.apachefriends.org/download.html`
-
+	https://dev.mysql.com/downloads/mysql/
+	Or and Apache Localhosting Server:
+        https://www.apachefriends.org/download.html
 
 II- Content:
 ------------
